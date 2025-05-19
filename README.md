@@ -2,25 +2,29 @@
 
 This repository contains the relevant raw data and code for generating the dataset.
 
+---
+
 ## Data Description
 
 ### Introduction to Raw Data
 
-本项目所使用的原始数据来源于自行采集的实验数据。  
-该数据集用于PCB电镀（Electroplating）预测及PCB虚拟焊盘（Dummy Pad）布局优化。
+The raw data used in this project originate from actual PCB boards used in production.
+This dataset is intended for PCB electroplating prediction and PCB dummy pad layout optimization.
 
-每个样本包含以下三个文件：  
-- `cbm11856_020.tgz`：ODB++文件。作为PCB设计的源文件，包含input，matrix，flows，steps，symbols等数据。可以直接用COMSOL Multiphysics®软件进行模型仿真。
-- `features`：矢量文件。包含需要电镀铜的通孔、Dummy pad及Virtual Sub-Board Boundary的物理矢量位置。  
-- `Untitled.txt`：矢量文件。基于COMSOL Multiphysics®软件设计的电镀槽多物理场仿真结果，包含不同未知条件下的电镀铜数据。  
+Each sample contains the following three files:
+
+* `cbm11856_020.tgz`: An ODB++ file. It serves as the source file for PCB design, including input, matrix, flows, steps, symbols, and other data. It can be directly used for simulation with COMSOL Multiphysics® software.
+* `features`: A vector file. It contains the physical vector locations of plated-through holes, dummy pads, and virtual sub-board boundaries that require copper plating.
+* `Untitled.txt`: A vector file. It contains electroplating copper data under various unknown conditions based on multiphysics simulation of the plating tank designed with COMSOL Multiphysics® software.
 
 ### Data Preprocessing
 
-本项目提供了将原始数据处理为模型训练和测试数据集的代码，处理流程包括：  
-1. `Divide.py`：将整版PCB分解为多个子板。  
-2. `Pre_data.py`：提取Dummy pad和通孔的物理矢量位置，转换为像素坐标。  
-3. `Pre_data2.py`：提取Virtual Sub-Board Boundary的物理矢量位置，转换为像素坐标。  
-4. `Create_dataset.py`：整理处理结果，生成模型训练和测试所需的数据集。  
+This project provides code to process the raw data into datasets suitable for model training and testing. The preprocessing workflow includes:
+
+1. `Divide.py`: Divides the full PCB into multiple sub-boards.
+2. `Pre_data.py`: Extracts the physical vector positions of dummy pads and plated-through holes and converts them to pixel coordinates.
+3. `Pre_data2.py`: Extracts the physical vector positions of virtual sub-board boundaries and converts them to pixel coordinates.
+4. `Create_dataset.py`: Organizes the processed results to generate datasets required for model training and testing.
 
 ## Sample Illustration of a Complete PCB Panel
 ![bb626b2cdc51cdd161dac967ce5fa0a](https://github.com/user-attachments/assets/44b24963-9b60-45c8-ad30-e0b5d387effb)
