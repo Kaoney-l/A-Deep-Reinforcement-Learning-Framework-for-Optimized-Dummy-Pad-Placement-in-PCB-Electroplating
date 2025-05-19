@@ -1,28 +1,25 @@
 # A-Deep-Reinforcement-Learning-Framework-for-Optimized-Dummy-Pad-Placement-in-PCB-Electroplating
-## 数据说明
-### 原始数据介绍
-本项目所使用的原始数据来源于（自行采集的实验数据）。  
 
-数据格式为（说明格式，如 CSV、JSON、图像、音频等），包含以下主要内容：  
-- 数据项1（如传感器读数、图像帧等）  
-- 数据项2  
-- …  
+This repository contains the relevant raw data and code for generating the dataset.
 
-数据特点：  
-- 样本数量：约 N 条  
-- 数据维度：…  
-- 采样频率/时间范围：…  
-- 其他重要信息  
+## Data Description
 
-### 数据预处理
+### Introduction to Raw Data
 
-本项目提供了用于将原始数据处理成模型训练/测试数据集的代码，处理流程包括：  
-1. 数据清洗（如缺失值处理、异常值剔除等）  
-2. 数据格式转换（如从 CSV 转换为 NumPy 数组或 Tensor 格式）  
-3. 特征提取与选择  
-4. 数据划分（训练集/验证集/测试集）  
-5. 其他预处理步骤  
+本项目所使用的原始数据来源于自行采集的实验数据。  
+该数据集用于PCB电镀（Electroplating）预测及PCB虚拟焊盘（Dummy Pad）布局优化。
 
-处理代码位于 `data_preprocessing/` 文件夹下，主要脚本说明如下：  
-- `prepare_dataset.py`：主处理脚本，执行数据加载、清洗、转换及划分。  
-- `utils.py`：辅助函数，如数据读取、归一化等。  
+每个样本包含以下三个文件：  
+- `cbm11856_020.tgz`：PCB设计的源文件。  
+- `features`：矢量文件，包含需要电镀铜的通孔、Dummy pad及Virtual Sub-Board Boundary的物理矢量位置。  
+- `Untitled.txt`：基于COMSOL Multiphysics®软件设计的电镀槽多物理场仿真结果，包含不同未知条件下的电镀铜数据。  
+
+### Data Preprocessing
+
+本项目提供了将原始数据处理为模型训练和测试数据集的代码，处理流程包括：  
+1. `Divide.py`：将整版PCB分解为多个子板。  
+2. `Pre_data.py`：提取Dummy pad和通孔的物理矢量位置，转换为像素坐标。  
+3. `Pre_data2.py`：提取Virtual Sub-Board Boundary的物理矢量位置，转换为像素坐标。  
+4. `Create_dataset.py`：整理处理结果，生成模型训练和测试所需的数据集。  
+
+## Sample Illustration of a Complete PCB Panel
