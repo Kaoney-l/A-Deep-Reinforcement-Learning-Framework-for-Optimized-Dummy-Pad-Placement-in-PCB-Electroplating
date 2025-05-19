@@ -27,5 +27,6 @@ This project provides code to process the raw data into datasets suitable for mo
 4. `Create_dataset.py`: Organizes the processed results to generate datasets required for model training and testing.
 
 ## Sample Illustration of a Complete PCB Panel
-![bb626b2cdc51cdd161dac967ce5fa0a](https://github.com/user-attachments/assets/44b24963-9b60-45c8-ad30-e0b5d387effb)
+![fd3e25c3890f151eac1ea1aa3dd122e](https://github.com/user-attachments/assets/805f2a57-bcea-4103-b1af-6961d5cdbd2b)
+
 
