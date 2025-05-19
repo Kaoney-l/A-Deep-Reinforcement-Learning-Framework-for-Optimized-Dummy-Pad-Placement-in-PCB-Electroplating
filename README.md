@@ -23,3 +23,5 @@ This repository contains the relevant raw data and code for generating the datas
 4. `Create_dataset.py`：整理处理结果，生成模型训练和测试所需的数据集。  
 
 ## Sample Illustration of a Complete PCB Panel
+![bb626b2cdc51cdd161dac967ce5fa0a](https://github.com/user-attachments/assets/44b24963-9b60-45c8-ad30-e0b5d387effb)
+
