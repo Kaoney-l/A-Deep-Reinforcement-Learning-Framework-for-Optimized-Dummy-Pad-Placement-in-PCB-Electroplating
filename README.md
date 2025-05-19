@@ -10,9 +10,9 @@ This repository contains the relevant raw data and code for generating the datas
 该数据集用于PCB电镀（Electroplating）预测及PCB虚拟焊盘（Dummy Pad）布局优化。
 
 每个样本包含以下三个文件：  
-- `cbm11856_020.tgz`：PCB设计的源文件。  
-- `features`：矢量文件，包含需要电镀铜的通孔、Dummy pad及Virtual Sub-Board Boundary的物理矢量位置。  
-- `Untitled.txt`：基于COMSOL Multiphysics®软件设计的电镀槽多物理场仿真结果，包含不同未知条件下的电镀铜数据。  
+- `cbm11856_020.tgz`：ODB++文件。作为PCB设计的源文件，包含input，matrix，flows，steps，symbols等数据。可以直接用COMSOL Multiphysics®软件进行模型仿真。
+- `features`：矢量文件。包含需要电镀铜的通孔、Dummy pad及Virtual Sub-Board Boundary的物理矢量位置。  
+- `Untitled.txt`：矢量文件。基于COMSOL Multiphysics®软件设计的电镀槽多物理场仿真结果，包含不同未知条件下的电镀铜数据。  
 
 ### Data Preprocessing
 
