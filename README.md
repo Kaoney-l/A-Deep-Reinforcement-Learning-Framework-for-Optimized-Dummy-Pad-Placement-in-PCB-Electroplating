@@ -14,7 +14,7 @@ This dataset is intended for PCB electroplating prediction and PCB dummy pad lay
 Each sample contains the following three files:
 
 * `cbm11856_020.tgz`: An ODB++ file. It serves as the source file for PCB design, including input, matrix, flows, steps, symbols, and other data. It can be directly used for simulation with COMSOL Multiphysics® software.
-* `features`: A vector file. It contains the physical vector locations of plated-through holes, dummy pads, and virtual sub-board boundaries that require copper plating.
+* `features & surface.txt`: A vector file. It contains the physical vector locations of plated-through holes, dummy pads, and virtual sub-board boundaries that require copper plating.
 * `Untitled.txt`: A vector file. It contains electroplating copper data under various unknown conditions based on multiphysics simulation of the plating tank designed with COMSOL Multiphysics® software.
 
 ### Data Preprocessing
